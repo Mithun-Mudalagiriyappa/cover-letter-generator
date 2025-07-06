@@ -1,4 +1,4 @@
-#COVER LETTER GENERATOR:
+COVER LETTER GENERATOR:
 An AI-powered web application for generating personalized cover letters using Angular (frontend), FastAPI (backend), and Ollama for local LLM integratioN.
 
 TECHNOLOGY STACK:
