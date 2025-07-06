@@ -1,2 +1,9 @@
-<h2>Your AI-Generated Cover Letter</h2>
-<pre>{{ letter }}</pre>
+<h2>Your Cover Letter</h2>
+
+<div *ngIf="loading" class="loader">
+  ✍️ Preparing your personalized letter...
+</div>
+
+<pre class="typewriter" *ngIf="!loading || letter">
+{{ letter }}
+</pre>

@@ -22,27 +22,14 @@ export default class FormComponent {
 
   constructor(private api: ApiService, private router: Router) { }
 
-  loading = false;
-
   submit() {
     if (!this.form.name || !this.form.role || !this.form.experience || !this.form.skills) return;
-     console.log("Form submitted", this.form);
 
-    this.loading = true;
-    this.api.generateLetter(this.form).subscribe({
-      next: (res) => {
-        console.log("Response from backend:", res);
+    // Save form data for preview component to access
+    localStorage.setItem('formData', JSON.stringify(this.form));
 
-        localStorage.setItem('letter', res.letter);
-        this.router.navigate(['/preview']);
-      },
-      error: (err) => {
-        console.error('Generation failed', err);
-        alert('Something went wrong. Please try again.');
-      },
-      complete: () => {
-        this.loading = false;
-      }
-    });
+    // Navigate to preview page to handle the stream
+    this.router.navigate(['/preview']);
   }
+
 }

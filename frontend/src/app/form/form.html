@@ -1,6 +1,6 @@
 <h2>Create Your Cover Letter</h2>
 
-<form *ngIf="!loading" (ngSubmit)="submit()" #f="ngForm" novalidate>
+<form  (ngSubmit)="submit()" #f="ngForm" novalidate>
   <!-- Name Field -->
   <input type="text" name="name" [(ngModel)]="form.name" placeholder="Your name" required #name="ngModel" />
   <div *ngIf="f.submitted && name.invalid" class="error">
@@ -26,10 +26,7 @@
     Skills are required.
   </div>
 
-  <button type="submit" [disabled]="loading">
-    {{ loading ? 'Generating...' : 'Generate Letter' }}
+  <button type="submit">
+    Generate
   </button>
 </form>
-
-<div *ngIf="loading" class="loader">
-</div>
