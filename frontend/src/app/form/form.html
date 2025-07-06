@@ -1,1 +1,35 @@
-<p>form works!</p>
+<h2>Create Your Cover Letter</h2>
+
+<form *ngIf="!loading" (ngSubmit)="submit()" #f="ngForm" novalidate>
+  <!-- Name Field -->
+  <input type="text" name="name" [(ngModel)]="form.name" placeholder="Your name" required #name="ngModel" />
+  <div *ngIf="f.submitted && name.invalid" class="error">
+    Name is required.
+  </div>
+
+  <!-- Role Field -->
+  <input type="text" name="role" [(ngModel)]="form.role" placeholder="Job role" required #role="ngModel" />
+  <div *ngIf="f.submitted && role.invalid" class="error">
+    Job role is required.
+  </div>
+
+  <!-- Experience Field -->
+  <textarea name="experience" [(ngModel)]="form.experience" placeholder="Experience" required
+    #experience="ngModel"></textarea>
+  <div *ngIf="f.submitted && experience.invalid" class="error">
+    Experience is required.
+  </div>
+
+  <!-- Skills Field -->
+  <textarea name="skills" [(ngModel)]="form.skills" placeholder="Skills" required #skills="ngModel"></textarea>
+  <div *ngIf="f.submitted && skills.invalid" class="error">
+    Skills are required.
+  </div>
+
+  <button type="submit" [disabled]="loading">
+    {{ loading ? 'Generating...' : 'Generate Letter' }}
+  </button>
+</form>
+
+<div *ngIf="loading" class="loader">
+</div>

@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-preview',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './preview.html',
-  styleUrl: './preview.scss'
+  styleUrls: ['./preview.scss']
 })
-export class Preview {
-
+export default class PreviewComponent {
+  letter: string = localStorage.getItem('letter') || '';
 }
