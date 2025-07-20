@@ -81,7 +81,7 @@ at least once.
 {"message":"Ollama is running"}
 ```
 ---
-## Sample Screenshots
+## 🧰 Sample Screenshots
 * Screenshots added in the samples folder
 ---
 ## 👤 Author
