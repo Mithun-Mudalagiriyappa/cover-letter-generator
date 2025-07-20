@@ -1,57 +1,93 @@
-COVER LETTER GENERATOR:
-An AI-powered web application for generating personalized cover letters using Angular (frontend), FastAPI (backend), and Ollama for local LLM integratioN.
+# ✨ Cover Letter Generator
 
-TECHNOLOGY STACK:
-| Layer     | Technology
-| Frontend  | Angular 20  
-| Backend   | FastAPI + Uvicorn 
-| AI Engine | Ollama with mistral model
+An AI-powered web application for generating personalized cover letters using Angular (frontend), FastAPI (backend), and [Ollama](https://ollama.com/download) for local LLM integration.
 
-GETTING STARTED:
-1. Clone the Repository
-Bash: git clone https://github.com/Mithun-Mudalagiriyappa/cover-letter-generator.git
-      cd <your-repo>
+---
 
-2. INSTALL DEPENDENCIES:
-A. BACKEND
-Bash: cd backend
-      python -m venv venv
-      source venv\Scripts\activate (on Windows)
-      pip install -r requirements.txt
+## 🧰 Technology Stack
 
-B. FRONTEND
-Bash: cd ../frontend
-      npm install
+| Layer     | Technology              |
+|-----------|--------------------------|
+| Frontend  | Angular 20               |
+| Backend   | FastAPI + Uvicorn        |
+| AI Engine | Ollama with Mistral model|
 
-3. INSTALL OLLAMA
-Follow the installation guide for your platform:
-URL: https://ollama.com/download
+---
 
-Then download the Mistral model locally:
-Bash: ollama run mistral
+## 🚀 Getting Started
 
-4. RUN THE APP WITHOUT DOCKER (DEV MODE):
-A. OLLAMA
-Bash: ollama serve
+### 1️⃣ Clone the Repository
 
-B. BACKEND
-Bash: uvicorn app.main:app --reload
+```bash
+git clone https://github.com/Mithun-Mudalagiriyappa/cover-letter-generator.git
+cd cover-letter-generator
+```
+### 2️⃣ Install Dependencies
+#### Backend
+```bash
+cd backend
+python -m venv venv
+source venv/Scripts/activate  # On Windows
+pip install -r requirements.txt
+```
+#### Frontend
+```bash
+cd ../frontend
+npm install
+```
+### 3️⃣ Install Ollama
+Follow the installation guide: 👉 https://ollama.com/download
+Then pull the mistral model:
+```bash
+ollama run mistral
+```
 
-C. FRONTEND
-Bash: cd frontend
-      ng serve
+### 4️⃣ Run the App Without Docker (Dev Mode)
+#### 🧠Ollama
+```bash
+ollama serve
+```
+#### 🧬 Backend
+```bash
+cd backend
+uvicorn app.main:app --reload
+```
+#### 🖥️ Frontend
+```bash
+cd frontend
+ng serve
+```
+Visit your app at 👉 http://localhost:4200
 
-Visit: http://localhost:4200/
+---
+## 🛠️ Features
+* Form-based UI to enter name, role, experience, and skills
+* AI-generated letter via streaming API
+* Live preview as text streams in
+* Easily customizable for other LLM models or use-cases
+---
+## 🧪 Troubleshooting
+### 🔁 Model Timeout
+If backend times out contacting Ollama, make sure you’ve run:
+```bash
+ollama run mistral
+```
+at least once.
 
-5. FEATURES:
-- Form-based UI to enter name, role, experience, and skills
-- AI-generated letter via streaming API
-- Live preview as text streams in
-- Easily customizable for other LLM models or use-cases
+### 🧾 Verify Ollama Server Is Running
+* Visit http://localhost:11434
+* You should see:
+```json
+{"message":"Ollama is running"}
+```
+---
+## Sample Screenshots
+* Screenshots added in the samples folder
+---
+## 👤 Author
 
-6. Troubleshooting
-A. Model Timeout: If backend times out contacting Ollama, ensure "ollama run mistral" was executed at least once.
+**Mithun Mudalagiriyappa**  
+📍 Bengaluru, India  
+🚀 Passionate about building real-world AI tools using agentic systems, LangChain, and local LLMs via Ollama.  
 
-B. How to Check If Ollama Is Already Listening: 
-a) Run http://localhost:11434 on any browser
-b) Json: {"message":"Ollama is running"} 
+GitHub: [@Mithun-Mudalagiriyappa](https://github.com/Mithun-Mudalagiriyappa)
